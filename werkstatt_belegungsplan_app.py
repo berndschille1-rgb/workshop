@@ -211,7 +211,7 @@ def create_label_pdf(order_tuple):
     story.append(Paragraph(str(order_tuple[6]), normal_style))
     story.append(Spacer(1, 3*mm))
     
-    qr_target = f"https://workshop-vxuta4eusx93wf8ptlhnsn.streamlit.app/?tracking={order_tuple[0]}"
+    qr_target = f"http://192.168.178.45:8501/?tracking={order_tuple[0]}"
     qr_widget = qr.QrCodeWidget(qr_target)
     bounds = qr_widget.getBounds()
     width = bounds[2] - bounds[0]
@@ -656,7 +656,7 @@ else:
         with c_right:
             st.markdown("### 🔗 Verknüpfte Dokumente & Kommunikation")
             
-            local_ip_link = f"https://workshop-vxuta4eusx93wf8ptlhnsn.streamlit.app/?tracking={new_id}"
+            local_ip_link = f"http://192.168.178.45:8501/?tracking={new_id}"
             localhost_link = f"http://localhost:8501/?tracking={new_id}"
             
             st.text_input("Kunden-Live-Link (Werkstatt-WLAN IP)", value=local_ip_link, help="Diesen Link per WhatsApp/E-Mail an den Kunden senden")
